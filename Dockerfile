@@ -1,6 +1,7 @@
 FROM node:13-buster
 ARG SONAR_SCANNER_VERSION="4.3.0.2102"
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive \
+    SONAR_SCANNER_VERSION=${SONAR_SCANNER_VERSION}
 
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
