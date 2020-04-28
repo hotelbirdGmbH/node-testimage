@@ -24,5 +24,7 @@ RUN apt-get remove -y unzip && \
 
 COPY ./runsonarqube.sh /usr/bin/runsonarqube
 
-RUN chmod +x /usr/bin/runsonarqube
+RUN npm install -g typescript && chmod +x /usr/bin/runsonarqube
+
+CMD ["/usr/bin/runsonarqube"]
 
