@@ -22,3 +22,7 @@ RUN apt-get remove -y unzip && \
     apt-get autoclean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+COPY ./runsonarqube.sh /usr/bin/runsonarqube
+
+RUN chmod +x /usr/bin/runsonarqube
+
